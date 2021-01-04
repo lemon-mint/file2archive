@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{filename}}</title>
+    <style>
+        .print {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            white-space: -moz-pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <small>{{filename}}</small>
+    <small>{{time()}}</small>
+    <div class="print">{% for img in imgs %}{{img[3]+1}}/{{len(imgs)}}<img src="{{img[2]|safe}}">{% if img[3]%2 == 1 %}<br>{% endif %}{% endfor %}</div>
+    <h3>SHA384</h3><img src="{{hash|safe}}">
+</body>
+
+</html>
